@@ -1,0 +1,19 @@
+{
+  "name": "export-scraper",
+  "version": "1.0.0",
+  "main": "main.py",
+  "build": {
+    "dockerfilePath": "Dockerfile"
+  },
+  "env": {
+    "FTP_HOST": { "type": "string", "required": true },
+    "FTP_USER": { "type": "string", "required": true },
+    "FTP_PASSWORD": { "type": "string", "required": true },
+    "EMAIL_HOST": { "type": "string", "required": true },
+    "EMAIL_PORT": { "type": "number", "required": true },
+    "EMAIL_USER": { "type": "string", "required": true },
+    "EMAIL_PASSWORD": { "type": "string", "required": true },
+    "EMAIL_FROM": { "type": "string", "required": true },
+    "EMAIL_TO": { "type": "string", "required": true }
+  }
+}
