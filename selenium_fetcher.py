@@ -1,14 +1,16 @@
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-from time import sleep
+from selenium.webdriver.chrome.options import Options
 
 def fetch_products():
     url = "https://www.aunika.com/"
     options = Options()
-    options.headless = True
-    driver = webdriver.Firefox(options=options)
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+
+    driver = webdriver.Chrome(options=options)
     driver.get(url)
-    sleep(3)
+
     items = driver.find_elements_by_css_selector(".product-item")
     products = []
     for el in items:
